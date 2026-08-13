@@ -151,7 +151,109 @@ color:#eeeeee;
 </div>
 
 </div>
+<style>
+.rooms{
+  display:none;
+  margin-top:30px;
+  animation:fadeIn 1.2s ease;
+}
 
+.rooms h2{
+  margin-bottom:20px;
+  font-weight:normal;
+  letter-spacing:3px;
+}
+
+.room-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  max-width:650px;
+  margin:auto;
+}
+
+.room{
+  display:block;
+  padding:15px 12px;
+  border:1px solid rgba(255,215,160,.35);
+  border-radius:8px;
+  background:rgba(60,25,20,.65);
+  color:#fff;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.room:hover{
+  background:#7b1818;
+  border-color:#d7a15c;
+  transform:translateY(-2px);
+}
+
+.special{
+  grid-column:1 / -1;
+  border-color:#d7a15c;
+}
+
+.door.open{
+  transform:perspective(700px) rotateY(-75deg);
+  transform-origin:left center;
+  opacity:.15;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(15px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:600px){
+  .room-grid{
+    grid-template-columns:1fr;
+  }
+
+  .special{
+    grid-column:auto;
+  }
+}
+</style>
+
+<div class="rooms" id="rooms">
+  <h2>今日はどちらへ？</h2>
+
+  <div class="room-grid">
+    <a class="room" href="#">🍷 メインカウンター</a>
+    <a class="room" href="#">💬 雑談室</a>
+    <a class="room" href="#">📖 『最後の花火』</a>
+    <a class="room" href="#">🎵 音楽室</a>
+    <a class="room" href="#">🖼 ギャラリー</a>
+    <a class="room" href="#">🌙 思い出の部屋</a>
+    <a class="room special" href="#">⭐ ピーターパン専用席</a>
+  </div>
+</div>
+
+<script>
+const door = document.querySelector(".door");
+const rooms = document.getElementById("rooms");
+const subtitle = document.querySelector(".subtitle");
+const message = document.querySelector(".message");
+
+door.addEventListener("click", function(){
+
+  door.classList.add("open");
+
+  subtitle.textContent = "カラン……";
+
+  message.innerHTML =
+    "お疲れ様。<br>今日はどっち？";
+
+  setTimeout(function(){
+    door.style.display = "none";
+    rooms.style.display = "block";
+  },700);
+
+});
+</script>
+
+  
 </body>
 
 </html>
