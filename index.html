@@ -3,85 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>BAR「灯」</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    background:#111;
-    color:white;
-    font-family:"Yu Gothic UI",sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:linear-gradient(#111,#2b1b12);
+
+background:#0d0d0d;
+font-family:"Yu Gothic UI",sans-serif;
+color:white;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background-image:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+radial-gradient(circle at center,#4b2d1d,#111);
+
 }
 
 .container{
-    width:900px;
-    max-width:90%;
-    text-align:center;
+
+width:900px;
+max-width:90%;
+text-align:center;
+
 }
 
 h1{
-    font-size:48px;
-    letter-spacing:8px;
-    margin-bottom:10px;
+
+font-size:56px;
+letter-spacing:10px;
+
+margin-bottom:10px;
+
 }
 
-.sub{
-    color:#cccccc;
-    margin-bottom:40px;
+.subtitle{
+
+color:#cccccc;
+
+margin-bottom:40px;
+
+font-size:20px;
+
 }
 
 .door{
-    width:220px;
-    height:320px;
-    margin:auto;
-    background:#5b3a29;
-    border:8px solid #3d2417;
-    border-radius:8px;
-    cursor:pointer;
-    transition:.3s;
-    box-shadow:0 0 30px rgba(255,180,80,.25);
+
+width:220px;
+
+height:340px;
+
+background:#6a432e;
+
+margin:auto;
+
+border:8px solid #3d2418;
+
+border-radius:8px;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 0 40px rgba(255,180,80,.15);
+
+position:relative;
+
 }
 
 .door:hover{
-    transform:scale(1.03);
-    box-shadow:0 0 40px rgba(255,220,120,.6);
+
+transform:scale(1.03);
+
+box-shadow:0 0 60px rgba(255,220,150,.6);
+
 }
 
 .knob{
-    width:18px;
-    height:18px;
-    border-radius:50%;
-    background:gold;
-    margin-top:155px;
-    margin-left:180px;
+
+position:absolute;
+
+right:22px;
+
+top:165px;
+
+width:18px;
+
+height:18px;
+
+background:gold;
+
+border-radius:50%;
+
 }
 
-#menu{
-    display:none;
-    margin-top:40px;
+.message{
+
+margin-top:35px;
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#eeeeee;
+
 }
 
-button{
-    width:260px;
-    padding:14px;
-    margin:8px;
-    font-size:18px;
-    border:none;
-    border-radius:8px;
-    background:#8b0000;
-    color:white;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#b22222;
-}
 </style>
+
 </head>
 
 <body>
@@ -90,45 +130,28 @@ button:hover{
 
 <h1>BAR「灯」</h1>
 
-<div class="sub">
+<div class="subtitle">
+
+扉を開けてください
+
+</div>
+
+<div class="door">
+
+<div class="knob"></div>
+
+</div>
+
+<div class="message">
+
 お疲れ様。<br>
-扉を開けてください。
-</div>
 
-<div class="door" onclick="openBar()">
-    <div class="knob"></div>
-</div>
-
-<div id="menu">
-
-<h2>今日はどちらへ？</h2>
-
-<button>🍷 メインカウンター</button><br>
-<button>💬 雑談室</button><br>
-<button>📖 最後の花火</button><br>
-<button>🎵 音楽室</button><br>
-<button>🖼 ギャラリー</button><br>
-<button>🌙 思い出の部屋</button><br>
-<button>⭐ ピーターパン専用席</button>
+今日はどんな夜にしますか？
 
 </div>
 
 </div>
-
-<script>
-
-function openBar(){
-
-document.querySelector(".door").style.display="none";
-
-document.querySelector(".sub").innerHTML=
-"カラン……<br><br>いらっしゃい。<br>今日はどっち？";
-
-document.getElementById("menu").style.display="block";
-
-}
-
-</script>
 
 </body>
+
 </html>
