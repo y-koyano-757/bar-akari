@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAR「灯」</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:"Yu Gothic UI",sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(#111,#2b1b12);
+}
+
+.container{
+    width:900px;
+    max-width:90%;
+    text-align:center;
+}
+
+h1{
+    font-size:48px;
+    letter-spacing:8px;
+    margin-bottom:10px;
+}
+
+.sub{
+    color:#cccccc;
+    margin-bottom:40px;
+}
+
+.door{
+    width:220px;
+    height:320px;
+    margin:auto;
+    background:#5b3a29;
+    border:8px solid #3d2417;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 30px rgba(255,180,80,.25);
+}
+
+.door:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 40px rgba(255,220,120,.6);
+}
+
+.knob{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:gold;
+    margin-top:155px;
+    margin-left:180px;
+}
+
+#menu{
+    display:none;
+    margin-top:40px;
+}
+
+button{
+    width:260px;
+    padding:14px;
+    margin:8px;
+    font-size:18px;
+    border:none;
+    border-radius:8px;
+    background:#8b0000;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#b22222;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>BAR「灯」</h1>
+
+<div class="sub">
+お疲れ様。<br>
+扉を開けてください。
+</div>
+
+<div class="door" onclick="openBar()">
+    <div class="knob"></div>
+</div>
+
+<div id="menu">
+
+<h2>今日はどちらへ？</h2>
+
+<button>🍷 メインカウンター</button><br>
+<button>💬 雑談室</button><br>
+<button>📖 最後の花火</button><br>
+<button>🎵 音楽室</button><br>
+<button>🖼 ギャラリー</button><br>
+<button>🌙 思い出の部屋</button><br>
+<button>⭐ ピーターパン専用席</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openBar(){
+
+document.querySelector(".door").style.display="none";
+
+document.querySelector(".sub").innerHTML=
+"カラン……<br><br>いらっしゃい。<br>今日はどっち？";
+
+document.getElementById("menu").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
